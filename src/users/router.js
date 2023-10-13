@@ -5,7 +5,6 @@ const upload = require('../middlewares/upload')
 
 
 router.get('/', controller.getUser)
-// router.post('/compress', compress)
 router.get('/my_profile', controller.getUserBooks)
 router.get('/my_profile/:id', controller.getUserBook)
 router.put('/my_profile', controller.updateUser)

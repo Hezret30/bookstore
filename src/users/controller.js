@@ -1,9 +1,7 @@
-const { error } = require('console')
 const pool = require('../../db')
 const queries = require('./queries')
 const fs = require('fs')
 const bcrypt = require('bcrypt')
-const { use } = require('./router')
 
 ///////////////////////////// USERS /////////////////////////////
 
@@ -175,5 +173,5 @@ module.exports = {
     changePassword,
     addBook,
     updateBook,
-    deleteBook
+    deleteBook,
 }

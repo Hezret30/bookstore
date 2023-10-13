@@ -14,7 +14,6 @@ app.use('/auth', auth)
 app.use('/users', guard, users)
 app.use('/books/images', express.static('./src/static/books'))
 app.use('/static/users_books/', express.static('./src/static/users_books'))
-
 app.listen(env.port, () => {
     console.log(`Listening on port ${env.port}`)
 })

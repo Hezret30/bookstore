@@ -1,5 +1,5 @@
-const getBooks = `
-        SELECT id, title, author, img_url, price, count FROM books OFFSET $1 LIMIT $2
+const getBooks = `  
+        SELECT $1 FROM books ORDER BY $1
 `
 const getBook = `
             SELECT JSON_BUILD_OBJECT(

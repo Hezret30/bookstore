@@ -3,11 +3,14 @@ const queries = require('./queries')
 
 const getBooks = async (req, res) => {
 
-    const { page, limit } = req.query
-
+    const { page, limit, sort_by } = req.query
+    console.log(req.query);
     const offset = page * limit - limit
 
-    const { rows } = await pool.query(queries.getBooks, [offset, limit])
+    console.log(sort_by);
+
+    const { rows } = await pool.query(`SELECT id, title, author, price FROM books ORDER BY ${sort_by} LIMIT ${limit} OFFSET ${offset}`)
+
     res.status(200).json(rows)
 }
 
